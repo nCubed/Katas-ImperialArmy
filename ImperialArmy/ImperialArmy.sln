@@ -1,0 +1,39 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialArmy.Common", "ImperialArmy.Common\ImperialArmy.Common.csproj", "{B73A7274-70A1-48AD-BF0D-C434DC3712C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialArmy.Military.UnitTests", "ImperialArmy.Military.UnitTests\ImperialArmy.Military.UnitTests.csproj", "{5E746B1C-E1CC-48BE-A567-2CD296E9A82F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialArmy.Military", "ImperialArmy.Military\ImperialArmy.Military.csproj", "{5F1C3D26-A112-415B-B545-05F40CCA45E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{178D2D37-3495-4A95-9B93-7E8B0C04F705}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B73A7274-70A1-48AD-BF0D-C434DC3712C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B73A7274-70A1-48AD-BF0D-C434DC3712C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B73A7274-70A1-48AD-BF0D-C434DC3712C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B73A7274-70A1-48AD-BF0D-C434DC3712C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E746B1C-E1CC-48BE-A567-2CD296E9A82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E746B1C-E1CC-48BE-A567-2CD296E9A82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E746B1C-E1CC-48BE-A567-2CD296E9A82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E746B1C-E1CC-48BE-A567-2CD296E9A82F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1C3D26-A112-415B-B545-05F40CCA45E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1C3D26-A112-415B-B545-05F40CCA45E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1C3D26-A112-415B-B545-05F40CCA45E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1C3D26-A112-415B-B545-05F40CCA45E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
