@@ -3,9 +3,9 @@ using ImperialArmy.Common.Inventory;
 using ImperialArmy.Common.Soldier;
 using ImperialArmy.Common.SoldierOrder;
 using ImperialArmy.Military.Soldier;
-using ImperialArmy.Military.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -25,27 +25,36 @@ namespace ImperialArmy.Military.UnitTests
         }
 
         [TestMethod]
+        public void Horseman_Is_Internal_Sealed_NotAbstract()
+        {
+            AssertClass<Horseman>.IsInternal();
+            AssertClass<Horseman>.IsSealed();
+            AssertClass<Horseman>.IsNotAbstract();
+        }
+
+        [TestMethod]
         public void Horseman_Inherits_FootSoldier()
         {
-            AssertThat.ClassIsImplemented<Horseman, FootSoldier>();
+            AssertClass<Horseman>.InheritsBaseClass<FootSoldier>();
+            AssertClass<Horseman>.InheritsAbstractBaseClass<SoldierBase>();
         }
 
         [TestMethod]
         public void Horseman_Implements_ISoldier()
         {
-            AssertThat.InterfaceIsImplemented<Horseman, ISoldier>();
+            AssertClass<Horseman>.ImplementsInterface<ISoldier>();
         }
 
         [TestMethod]
         public void Horseman_Implements_IHorseman()
         {
-            AssertThat.InterfaceIsImplemented<Horseman, IHorseman>();
+            AssertClass<Horseman>.ImplementsInterface<IHorseman>();
         }
 
         [TestMethod]
         public void Horseman_Implements_ITrampleFoes()
         {
-            AssertThat.InterfaceIsImplemented<Horseman, ITrampleFoes>();
+            AssertClass<Horseman>.ImplementsInterface<ITrampleFoes>();
         }
 
         [TestMethod]

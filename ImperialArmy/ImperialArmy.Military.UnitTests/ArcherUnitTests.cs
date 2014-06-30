@@ -3,9 +3,9 @@ using ImperialArmy.Common.Inventory;
 using ImperialArmy.Common.Soldier;
 using ImperialArmy.Common.SoldierOrder;
 using ImperialArmy.Military.Soldier;
-using ImperialArmy.Military.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -24,27 +24,36 @@ namespace ImperialArmy.Military.UnitTests
         }
 
         [TestMethod]
+        public void Archer_Is_Internal_Sealed_NotAbstract()
+        {
+            AssertClass<Archer>.IsInternal();
+            AssertClass<Archer>.IsSealed();
+            AssertClass<Archer>.IsNotAbstract();
+        }
+
+        [TestMethod]
         public void Archer_Inherits_FootSoldier()
         {
-            AssertThat.ClassIsImplemented<Archer, FootSoldier>();
+            AssertClass<Archer>.InheritsBaseClass<FootSoldier>();
+            AssertClass<Archer>.InheritsAbstractBaseClass<SoldierBase>();
         }
 
         [TestMethod]
         public void Archer_Implements_ISoldier()
         {
-            AssertThat.InterfaceIsImplemented<Archer, ISoldier>();
+            AssertClass<Archer>.ImplementsInterface<ISoldier>();
         }
 
         [TestMethod]
         public void Archer_Implements_IArcher()
         {
-            AssertThat.InterfaceIsImplemented<Archer, IArcher>();
+            AssertClass<Archer>.ImplementsInterface<IArcher>();
         }
 
         [TestMethod]
         public void Archer_Implements_IShootDistantFoes()
         {
-            AssertThat.InterfaceIsImplemented<Archer, IShootDistantFoes>();
+            AssertClass<Archer>.ImplementsInterface<IShootDistantFoes>();
         }
 
         [TestMethod]

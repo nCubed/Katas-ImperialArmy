@@ -7,7 +7,7 @@ namespace ImperialArmy.Military.Soldier
 {
     [Export( typeof( IHorseman ) )]
     [PartCreationPolicy( CreationPolicy.NonShared )]
-    internal class Horseman : FootSoldier, IHorseman
+    internal sealed class Horseman : FootSoldier, IHorseman
     {
         private readonly IHorse _horse;
 

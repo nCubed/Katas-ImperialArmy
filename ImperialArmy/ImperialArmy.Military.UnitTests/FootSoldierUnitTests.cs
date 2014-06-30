@@ -3,8 +3,8 @@ using ImperialArmy.Common;
 using ImperialArmy.Common.Soldier;
 using ImperialArmy.Common.SoldierOrder;
 using ImperialArmy.Military.Soldier;
-using ImperialArmy.Military.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -20,27 +20,35 @@ namespace ImperialArmy.Military.UnitTests
         }
 
         [TestMethod]
+        public void FootSoldier_Is_Internal_NotSealed_NotAbstract()
+        {
+            AssertClass<FootSoldier>.IsInternal();
+            AssertClass<FootSoldier>.IsNotSealed();
+            AssertClass<FootSoldier>.IsNotAbstract();
+        }
+
+        [TestMethod]
         public void FootSoldier_Inherits_SoliderBase()
         {
-            AssertThat.AbstractClassIsImplemented<FootSoldier, SoldierBase>();
+            AssertClass<FootSoldier>.InheritsAbstractBaseClass<SoldierBase>();
         }
 
         [TestMethod]
         public void FootSoldier_Implements_ISoldier()
         {
-            AssertThat.InterfaceIsImplemented<FootSoldier, ISoldier>();
+            AssertClass<FootSoldier>.ImplementsInterface<ISoldier>();
         }
 
         [TestMethod]
         public void FootSoldier_Implements_IFootSoldier()
         {
-            AssertThat.InterfaceIsImplemented<FootSoldier, IFootSoldier>();
+            AssertClass<FootSoldier>.ImplementsInterface<IFootSoldier>();
         }
 
         [TestMethod]
         public void FootSoldier_Implements_IFightToTheDeath()
         {
-            AssertThat.InterfaceIsImplemented<FootSoldier, IFightToTheDeath>();
+            AssertClass<FootSoldier>.ImplementsInterface<IFightToTheDeath>();
         }
 
         [TestMethod]

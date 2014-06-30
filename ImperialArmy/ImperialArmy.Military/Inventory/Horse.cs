@@ -5,7 +5,7 @@ namespace ImperialArmy.Military.Inventory
 {
     [Export( typeof( IHorse ) )]
     [PartCreationPolicy( CreationPolicy.NonShared )]
-    internal class Horse : IHorse
+    internal sealed class Horse : IHorse
     {
         public string Name { get; set; }
 

@@ -1,9 +1,8 @@
 using System;
-using ImperialArmy.Common;
 using ImperialArmy.Common.Inventory;
 using ImperialArmy.Military.Inventory;
-using ImperialArmy.Military.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -20,9 +19,17 @@ namespace ImperialArmy.Military.UnitTests
         }
 
         [TestMethod]
+        public void Horseman_Is_Internal_Sealed_NotAbstract()
+        {
+            AssertClass<Horse>.IsInternal();
+            AssertClass<Horse>.IsSealed();
+            AssertClass<Horse>.IsNotAbstract();
+        }
+
+        [TestMethod]
         public void Horse_Implements_IHorse()
         {
-            AssertThat.InterfaceIsImplemented<Horse, IHorse>();
+            AssertClass<Horse>.ImplementsInterface<IHorse>();
         }
 
         [TestMethod]

@@ -8,7 +8,7 @@ namespace ImperialArmy.Military.Soldier
 {
     [Export( typeof( IFlyingRainOfFire ) )]
     [PartCreationPolicy( CreationPolicy.NonShared )]
-    internal class FlyingRainOfFire : FootSoldier, IFlyingRainOfFire
+    internal sealed class FlyingRainOfFire : FootSoldier, IFlyingRainOfFire
     {
         private readonly IBowAndArrow _bowAndArrow;
         private readonly IHorse _horse;

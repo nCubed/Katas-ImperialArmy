@@ -5,7 +5,7 @@ namespace ImperialArmy.Military.Inventory
 {
     [Export( typeof( IBowAndArrow ) )]
     [PartCreationPolicy( CreationPolicy.NonShared )]
-    internal class BowAndArrow : IBowAndArrow
+    internal sealed class BowAndArrow : IBowAndArrow
     {
         public int ArrowCount { get; private set; }
 

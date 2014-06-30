@@ -2,6 +2,7 @@
 using ImperialArmy.Common.Soldier;
 using ImperialArmy.Military.Soldier;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -13,9 +14,15 @@ namespace ImperialArmy.Military.UnitTests
         {
             var soldier = MilitaryImperialComplex.CreateSoldier<IFootSoldier>();
 
-            Assert.IsNotNull(soldier);
-            Assert.IsTrue(soldier is SoldierBase);
-            Assert.IsTrue(soldier is FootSoldier);
+            Assert.IsNotNull( soldier );
+            Assert.IsTrue( soldier is SoldierBase );
+            Assert.IsTrue( soldier is FootSoldier );
+        }
+
+        [TestMethod]
+        public void MilitaryImperialComplex_IsPublic_Static()
+        {
+            AssertClass.IsStatic( typeof( MilitaryImperialComplex ), ClassVisibility.Public );
         }
 
         [TestMethod]
@@ -23,10 +30,10 @@ namespace ImperialArmy.Military.UnitTests
         {
             var soldier = MilitaryImperialComplex.CreateSoldier<IArcher>();
 
-            Assert.IsNotNull(soldier);
-            Assert.IsTrue(soldier is SoldierBase);
-            Assert.IsTrue(soldier is FootSoldier);
-            Assert.IsTrue(soldier is Archer);
+            Assert.IsNotNull( soldier );
+            Assert.IsTrue( soldier is SoldierBase );
+            Assert.IsTrue( soldier is FootSoldier );
+            Assert.IsTrue( soldier is Archer );
         }
 
         [TestMethod]
@@ -34,10 +41,10 @@ namespace ImperialArmy.Military.UnitTests
         {
             var soldier = MilitaryImperialComplex.CreateSoldier<IHorseman>();
 
-            Assert.IsNotNull(soldier);
-            Assert.IsTrue(soldier is SoldierBase);
-            Assert.IsTrue(soldier is FootSoldier);
-            Assert.IsTrue(soldier is Horseman);
+            Assert.IsNotNull( soldier );
+            Assert.IsTrue( soldier is SoldierBase );
+            Assert.IsTrue( soldier is FootSoldier );
+            Assert.IsTrue( soldier is Horseman );
         }
 
         [TestMethod]
@@ -45,10 +52,10 @@ namespace ImperialArmy.Military.UnitTests
         {
             var soldier = MilitaryImperialComplex.CreateSoldier<IFlyingRainOfFire>();
 
-            Assert.IsNotNull(soldier);
-            Assert.IsTrue(soldier is SoldierBase);
-            Assert.IsTrue(soldier is FootSoldier);
-            Assert.IsTrue(soldier is FlyingRainOfFire);
+            Assert.IsNotNull( soldier );
+            Assert.IsTrue( soldier is SoldierBase );
+            Assert.IsTrue( soldier is FootSoldier );
+            Assert.IsTrue( soldier is FlyingRainOfFire );
         }
 
         [TestMethod]
@@ -80,9 +87,9 @@ namespace ImperialArmy.Military.UnitTests
         {
             const int numberOfSoldiers = 1000;
 
-            var soldiers = (List<TSoldier>)MilitaryImperialComplex.CreateManySoldiers<TSoldier>(numberOfSoldiers);
+            var soldiers = (List<TSoldier>)MilitaryImperialComplex.CreateManySoldiers<TSoldier>( numberOfSoldiers );
 
-            Assert.AreEqual(numberOfSoldiers, soldiers.Count);
+            Assert.AreEqual( numberOfSoldiers, soldiers.Count );
         }
     }
 }

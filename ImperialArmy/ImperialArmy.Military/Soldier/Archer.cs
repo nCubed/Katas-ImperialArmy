@@ -7,7 +7,7 @@ namespace ImperialArmy.Military.Soldier
 {
     [Export( typeof( IArcher ) )]
     [PartCreationPolicy( CreationPolicy.NonShared )]
-    internal class Archer : FootSoldier, IArcher
+    internal sealed class Archer : FootSoldier, IArcher
     {
         private readonly IBowAndArrow _bowAndArrow;
 

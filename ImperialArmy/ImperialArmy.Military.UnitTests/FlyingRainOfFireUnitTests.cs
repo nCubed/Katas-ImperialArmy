@@ -4,9 +4,9 @@ using ImperialArmy.Common.Inventory;
 using ImperialArmy.Common.Soldier;
 using ImperialArmy.Common.SoldierOrder;
 using ImperialArmy.Military.Soldier;
-using ImperialArmy.Military.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -29,42 +29,51 @@ namespace ImperialArmy.Military.UnitTests
         }
 
         [TestMethod]
+        public void FlyingRainOfFire_Is_Internal_Sealed_NotAbstract()
+        {
+            AssertClass<FlyingRainOfFire>.IsInternal();
+            AssertClass<FlyingRainOfFire>.IsSealed();
+            AssertClass<FlyingRainOfFire>.IsNotAbstract();
+        }
+
+        [TestMethod]
         public void FlyingRainOfFire_Inherits_FootSolider()
         {
-            AssertThat.ClassIsImplemented<FlyingRainOfFire, FootSoldier>();
+            AssertClass<FlyingRainOfFire>.InheritsBaseClass<FootSoldier>();
+            AssertClass<FlyingRainOfFire>.InheritsAbstractBaseClass<SoldierBase>();
         }
 
         [TestMethod]
         public void FlyingRainOfFire_Implements_ISoldier()
         {
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, ISoldier>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<ISoldier>();
         }
 
         [TestMethod]
         public void FlyingRainOfFire_Implements_IArcher()
         {
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, IArcher>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<IArcher>();
         }
 
         [TestMethod]
         public void FlyingRainOfFire_Implements_IHorseman()
         {
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, IHorseman>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<IHorseman>();
         }
 
         [TestMethod]
         public void FlyingRainOfFire_Implements_IFlyingRainOfFire()
         {
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, IFlyingRainOfFire>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<IFlyingRainOfFire>();
         }
 
         [TestMethod]
         public void FlyingRainOfFire_Implements_AllSoldierOrders()
         {
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, IFightToTheDeath>();
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, IShootDistantFoes>();
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, ITrampleFoes>();
-            AssertThat.InterfaceIsImplemented<FlyingRainOfFire, ILeadTheCharge>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<IFlyingRainOfFire>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<IShootDistantFoes>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<ITrampleFoes>();
+            AssertClass<FlyingRainOfFire>.ImplementsInterface<ILeadTheCharge>();
         }
 
         [TestMethod]

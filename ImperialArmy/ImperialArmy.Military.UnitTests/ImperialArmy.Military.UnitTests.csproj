@@ -41,6 +41,9 @@
       <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="TypeAsserter">
+      <HintPath>..\packages\TypeAsserter.0.6\lib\net40\TypeAsserter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -58,12 +61,12 @@
     <Compile Include="ArcherUnitTests.cs" />
     <Compile Include="BowAndArrowUnitTests.cs" />
     <Compile Include="FlyingRainOfFireUnitTests.cs" />
-    <Compile Include="Helpers\AssertThat.cs" />
     <Compile Include="HorsemanUnitTests.cs" />
     <Compile Include="MilitaryImperialComplexUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FootSoldierUnitTests.cs" />
     <Compile Include="HorseUnitTests.cs" />
+    <Compile Include="SoldierBaseUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImperialArmy.Common\ImperialArmy.Common.csproj">

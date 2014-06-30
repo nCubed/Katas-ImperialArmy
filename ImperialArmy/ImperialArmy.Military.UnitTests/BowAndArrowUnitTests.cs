@@ -1,8 +1,7 @@
-﻿using ImperialArmy.Common;
-using ImperialArmy.Common.Inventory;
+﻿using ImperialArmy.Common.Inventory;
 using ImperialArmy.Military.Inventory;
-using ImperialArmy.Military.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TypeAsserter;
 
 namespace ImperialArmy.Military.UnitTests
 {
@@ -18,9 +17,17 @@ namespace ImperialArmy.Military.UnitTests
         }
 
         [TestMethod]
+        public void BowAndArrow_Is_Internal_Sealed_NotAbstract()
+        {
+            AssertClass<BowAndArrow>.IsInternal();
+            AssertClass<BowAndArrow>.IsSealed();
+            AssertClass<BowAndArrow>.IsNotAbstract();
+        }
+
+        [TestMethod]
         public void BowAndArrow_Implements_IBowAndArrow()
         {
-            AssertThat.InterfaceIsImplemented<BowAndArrow, IBowAndArrow>();
+            AssertClass<BowAndArrow>.ImplementsInterface<IBowAndArrow>();
         }
 
         [TestMethod]
