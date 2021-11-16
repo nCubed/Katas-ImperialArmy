@@ -1,14 +1,13 @@
-Katas-ImperialArmy
-==================
+# Katas-ImperialArmy
 
-This code challenge is about OO design principles and was presented by [Floyd May](https://plus.google.com/+FloydMay)
+This code challenge is about OO design principles and was presented by [Floyd May](https://medium.com/@floyd.may)
 
-###Goals###
+## Goals
 - The solution should meet the requirements.
 - The solution should be as DRY (don’t repeat yourself) as possible.
 - Not looking for "clever" solutions, but for designs that you’d feel confident to put into production code.
 
-###Requirements###
+## Requirements
 1. All soldiers of the imperial army must know their rank.
 2. A soldier can be ordered to fight to the death, and no one but a soldier can receive such an order.
 3. Some soldiers are archers; all archers are soldiers
